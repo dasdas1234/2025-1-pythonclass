@@ -10,4 +10,4 @@ s = "열심히 해보겠습니다"
 print(s)
 
 import sys
-print(sys.version)
+print(sys.version);

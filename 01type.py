@@ -39,4 +39,4 @@ tc1 = (tf - 32) * 5/9
 print(f'{tf=} ===>{tc1=}')
 
 tf1 = (tc * 9/5) + 32
-print(f'{tc=} ===>{tf1=}')
+print(f'{tc=} ===>{tf1=}');
