@@ -93,3 +93,14 @@ print(colors[:])
 #패킹, 언패킹
 c1, _, c2, c3, _, _ = colors
 print(c1, c2, c3)
+
+# 연습문제
+first = ["egg","salad", 'bread',"soup", "canafe"]
+second = ["fish","lamb", "pork", "beef", "chicken"]
+third = ["apple","banana", "orange", "grape", "mango"]
+
+order = [first, second, third]
+John = [order[0][:-2], second[1::3], third[0]]
+del John[2]
+John.extend([order[2][0:1]])
+print(John)
