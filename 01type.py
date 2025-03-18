@@ -56,3 +56,17 @@ print(b ** int(a))
 a='3.5'
 b=4
 print(b * a)
+
+colors1 = ['red', 'blue', 'green']
+print(colors1[1])
+print(colors1)
+print(len(colors1))
+
+cities = ['서울', '부산', '인천', '대전', '제주', '울산', '강진', '통영']
+print(cities[:])
+print(cities[0:5])
+print(cities[5:])
+print(cities[-9:]) # 리버스 인덱싱
+print(ities[::2]) # 증가값(step) [시작:끝:증가값]
+print(cities[::-1])  # 역으로 슬라이싱
+print(cities[4::-2])
