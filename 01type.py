@@ -100,7 +100,7 @@ second = ["fish","lamb", "pork", "beef", "chicken"]
 third = ["apple","banana", "orange", "grape", "mango"]
 
 order = [first, second, third]
-John = [order[0][:-2], second[1::3], third[0]]
-del John[2]
-John.extend([order[2][0:1]])
-print(John)
+john = [order[0][:-2], second[1::3], third[0]]
+del john[2]
+john.extend([order[2][0:1]])
+print(john)
