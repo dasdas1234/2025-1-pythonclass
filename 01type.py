@@ -57,16 +57,39 @@ a='3.5'
 b=4
 print(b * a)
 
-colors1 = ['red', 'blue', 'green']
-print(colors1[1])
-print(colors1)
-print(len(colors1))
+# 인덱싱
+colors = ['red', 'blue', 'green']
+print(colors) # 리스트 전체 출력
+print(colors[1]) # 리스트 두번째 원소 출력, 0부터 시작
+print(colors) # 리스트 마지막 원소 출력
+print(len(colors)) # 리스트 길이 출력
 
-cities = ['서울', '부산', '인천', '대전', '제주', '울산', '강진', '통영']
-print(cities[:])
-print(cities[0:5])
-print(cities[5:])
-print(cities[-9:]) # 리버스 인덱싱
-print(cities[::2]) # 증가값(step) [시작:끝:증가값]
-print(cities[::-1])  # 역으로 슬라이싱
-print(cities[4::-2])
+# 슬라이싱
+cities = ['서울', '부산', '인천', '의정부', '대전', '강릉', '논산', '포항']
+print(cities[0:7]) # cities[0:n] 0 ~ n-1까지 표시
+print(cities[:7]) # 0부터 n-1까지(6번까지)
+print(cities[:-1]) # 0부터 -2 까지
+print(cities[3:]) #
+print(cities[::]) # 모두 표시
+print(cities[-4:]) # 뒤에서 4번째부터 표시
+print(cities[:7:2])  # 0번부터 n-1(6번째)번까지 2칸 간격으로 표시
+print(cities[::3]) # 처음부터 끝까지 3칸 간격으로 표시
+print(cities[::-1]) # 처음부터 끝까지 거꾸로 표시
+print(cities[4::-2]) #
+
+# 리스트의 추가
+colors = ['red', 'blue', 'green']
+colors.append('white') # white를 추가
+print(colors[:])
+colors.extend(['black', 'purple']) # 여러개 추가
+print(colors[:])
+colors.insert(1, 'orange')
+print(colors[:])
+colors.remove('purple')
+print(colors[:])
+colors[1] = 'sky'
+print(colors[:])
+
+#패킹, 언패킹
+c1, _, c2, c3, _, _ = colors
+print(c1, c2, c3)
