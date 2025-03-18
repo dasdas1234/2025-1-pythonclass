@@ -67,6 +67,6 @@ print(cities[:])
 print(cities[0:5])
 print(cities[5:])
 print(cities[-9:]) # 리버스 인덱싱
-print(ities[::2]) # 증가값(step) [시작:끝:증가값]
+print(cities[::2]) # 증가값(step) [시작:끝:증가값]
 print(cities[::-1])  # 역으로 슬라이싱
 print(cities[4::-2])
