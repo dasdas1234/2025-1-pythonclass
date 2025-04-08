@@ -4,18 +4,54 @@
 # 규칙: n이 짝수 -> n/2
 #      n이 홀수 -> 3n+1
 #  예: 5 -> 16 -> 8 -> 4 -> 2 -> 1   (5단계)
+from mkl import second
 
-n = 97
-i = 0
+n = 9
+
 
 # n을 1부터 99까지 변화하면서, 각각의 단계수를 출력할 것
 # 그중 가장 큰 수를 찾을 것
 
-while n != 1:
-    i +=1
-    if n % 2 == 0:
-        n = n // 2
-    else:
-        n = 3 * n + 1
-    print(n)
-    print(f"총 단계: {i}")
+maxvalue = 0
+maxvaluen = 0
+
+secondvalue = 0
+secondvaluen = 0
+
+thirdvalue = 0
+thirdvaluen = 0
+
+for n in range(1,100):
+    print(f'{n=}')
+    ncount = 0
+    i = n
+
+    while i != 1:
+
+        if i % 2 == 0:
+            i = i // 2
+        else:
+            i = 3 * i + 1
+        ncount = ncount + 1
+
+    print(f"{ncount}번만에 1로 도착")
+    if maxvalue < ncount:
+        thirdvalue = secondvalue
+        thirdvaluen = secondvaluen
+        secondvalue = maxvalue
+        secondvaluen = maxvaluen
+
+        maxvalue = ncount
+        maxvaluen = n
+    elif secondvalue < ncount and secondvaluen > ncount:
+        thirdvalue = secondvalue
+        thirdvaluen = secondvaluen
+
+        secondvalue = ncount
+        secondvaluen = n
+    elif thirdvalue < ncount and thirdvaluen > ncount:
+        thirdvalue = ncount
+        thirdvaluen = n
+
+
+    print(f'{maxvalue=}, {maxvaluen=},{secondvalue=},{secondvaluen=},{thirdvalue=},{thirdvaluen=}')
