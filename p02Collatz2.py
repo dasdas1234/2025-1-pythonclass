@@ -34,9 +34,10 @@ for n in range(1,MAXNUM):
 # print(sum(ncountl)/len(ncountl))
 
 #평균, 중앙값, 표준편차, 최빈값, 최대값
-
+nmax = 0
 # 평균
 print(f'평균={statistics.mean(ncountl):,.5f}')
+print(f'해당숫자{ncountl.index(max(ncountl))+1}')
 print(f'최대값={max(ncountl)}')
 print(f'중앙값={statistics.median(ncountl):,.5f}')
 print(f'최빈값={statistics.multimode(ncountl)}')
@@ -45,6 +46,7 @@ print(f'표준편차={statistics.stdev(ncountl):,.5f}')
 
 end = time.time()
 print(f'{end - start:.5f}초가 걸렸습니다.')
+
 # numoy
 start = time.time()
 ncounta = np.zeros(MAXNUM-1)
