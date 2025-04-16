@@ -19,7 +19,7 @@ from p02Collatzfunc import collatz
 
 MAXNUM = 100
 
-
+ncounts = [collatz(n) for n in range(1, MAXNUM)]
 
 # 리스트방식
 
@@ -37,15 +37,19 @@ for n in range(1,MAXNUM):
 nmax = 0
 # 평균
 print(f'평균={statistics.mean(ncountl):,.5f}')
-print(f'해당숫자{ncountl.index(max(ncountl))+1}')
 print(f'최대값={max(ncountl)}')
 print(f'중앙값={statistics.median(ncountl):,.5f}')
 print(f'최빈값={statistics.multimode(ncountl)}')
 print(f'표준편차={statistics.stdev(ncountl):,.5f}')
-
+print(f'해당숫자{ncountl.index(max(ncountl))+1}')
 
 end = time.time()
 print(f'{end - start:.5f}초가 걸렸습니다.')
+
+print("\n[리스트 상위 3개]")
+numl123 = sorted([(val, idx+1) for idx, val in enumerate(ncounts)], reverse=True)[:3]
+for i, (val, n) in enumerate(numl123, start=1):
+    print(f'{i}위: 값={val}, 해당숫자={n}')
 
 # numoy
 start = time.time()
@@ -66,3 +70,8 @@ print(f'최빈값={multimode(ncounta)}')
 print(f'표준편차={np.std(ncounta):.5f}')
 end = time.time()
 print(f'{end - start:.5f}초가 걸렸습니다.')
+
+print("\n[NumPy 상위 3개]")
+nump123 = np.argsort(ncounta)[::-1][:3]
+for i, idx in enumerate(nump123, start=1):
+    print(f'{i}위: 값={int(ncounta[idx])}, 해당숫자={idx+1}')
